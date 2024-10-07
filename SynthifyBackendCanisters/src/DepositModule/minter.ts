@@ -38,16 +38,12 @@ export type UpdateBalanceResult = Variant<{
 
 // The result of an [update_balance] call.
 type UtxoStatus = Variant<{
-    // The minter ignored this UTXO because UTXO's value is too small to pay
-    // the KYT fees. This state is final, retrying [update_balance] call will
-    // have no effect on this UTXO.
+   
     ValueTooSmall: Utxo;
     // The KYT provider considered this UTXO to be tained. This UTXO state is
     // final, retrying [update_balance] call will have no effect on this UTXO.
     Tainted: Utxo;
-    // The UTXO passed the KYT check, but the minter failed to mint ckBTC
-    // because the Ledger was unavailable. Retrying the [update_balance] call
-    // should eventually advance the UTXO to the [Minted] state.
+   
     Checked: Utxo;
     // The UTXO passed the KYT check, and ckBTC has been minted.
     Minted: Record<{
