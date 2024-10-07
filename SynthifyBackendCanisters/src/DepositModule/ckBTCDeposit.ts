@@ -91,32 +91,7 @@ export async function getBtcDepositAddress(of:Principal): Promise<string> {
 }
 
 
-// @todo: This method should not be exposed to everyone 
-// $update;
-// export async function transfer(
-//     to: Account,
-//     amount: nat
-// ): Promise<Variant<{ Ok: nat; Err: ICRCTransferError }>> {
-//     const result = await ckBTC
-//         .icrc1_transfer({
-//             from_subaccount: Opt.Some(
-//                 padPrincipalWithZeros(ic.caller().toUint8Array())
-//             ),
-//             to: padSubAccount(to),
-//             amount,
-//             fee: Opt.Some(10n),
-//             memo: Opt.None,
-//             created_at_time: Opt.None
-//         })
-//         .call();
 
-//     return match(result, {
-//         Ok: (ok) => ok,
-//         Err: (err) => ic.trap(err)
-//     });
-// }
-// from:Principal,vaultId:nat,_VaultManagerAddress:Principal,_amount:nat
-//Promise<Result<nat,ICRCTransferError>
 
 $update;
 export async function transferToVault(from:Principal,vaultId:nat,_VaultManagerAddress:Principal,_amount:nat  ):Promise<Result<nat,ICRCTransferError>>
