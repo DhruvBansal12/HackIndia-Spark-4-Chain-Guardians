@@ -74,6 +74,7 @@ export interface _InlineUtxoStatusMinted {
   'block_index' : bigint,
   'utxo' : Utxo,
 }
+
 export interface _SERVICE {
   'getBalance' : ActorMethod<[Principal], bigint>,
   'getBtcDepositAddress' : ActorMethod<[Principal], string>,
