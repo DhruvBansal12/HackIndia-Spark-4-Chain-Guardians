@@ -444,7 +444,7 @@ const Withdraw = () => {
           </div>
         </div>
       ) : (
-        <div className={styles.notConnected}>
+       <div className={styles.notConnected}>
           <h1>Wallet Not Connected</h1>
           <p>
             Download and get started for free with{" "}
